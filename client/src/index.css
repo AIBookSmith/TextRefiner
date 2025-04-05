@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .highlight-change {
+    @apply bg-green-100 text-green-800 px-1 rounded transition-colors duration-200;
+  }
+
+  .loading-dots:after {
+    content: '...';
+    animation: loadingDots 1.5s infinite;
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+  }
+
+  @keyframes loadingDots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+  }
+}
